@@ -22,4 +22,4 @@ So I came up with the following steps:
 3. Sort the movies using the *sorted* function and the *lambda* function as the key to sort by release year.
 4. Print the sorted tuple to the console for testing purposes.
 5. Save the tuple inside a new .txt file in the original format.
-6. Run the code.
+6. Execute the program.
