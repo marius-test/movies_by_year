@@ -26,7 +26,7 @@ def save_movies_to_file(movies, filename):
     """Saves movies to a file in the specified format."""
     with open(filename, "w") as output:
         for name, year in movies:
-            output.write(f"{name} ({year})\n")
+            output.write(f"{name}({year})\n")
            
             
 """Executing the program."""
