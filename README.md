@@ -1,25 +1,32 @@
 # movies_by_year
 
-A short program I wrote in Python to help me sort my list of movies to watch.
+A small Python program I wrote to solve a personal problem related to managing my movie watchlist.
 
-My list was formatted but unordered, the format of my list was:
+### Background
 
-```text
-Movie A (Release Year)
-Movie B (Release Year)
-Movie C (Release Year)
-.
-.
-.
+I love movies and cinema. Whenever I hear about a movie I want to watch, I write it down in my notes in this format:
+```bash
+Movie Title (Year)
 ```
+However, the list gets unordered and messy. I wanted a simple way to sort my movies by their release year in ascending order.
 
-I wanted to sort my list of movies by release year, ascending.
+### How it works
 
-So I came up with the following steps:
+1. Reads a `.txt` file containing the list of movies in the format:  
+   `Movie Title (Year)`  
+2. Parses each line into a tuple: `(Movie Title, Year)`  
+3. Sorts the list by release year using Python’s `sorted()` function with a `lambda` key  
+4. Prints the sorted list to the console  
+5. Saves the sorted list back into a new `.txt` file, preserving the original format
 
-1. Open the .txt file.
-2. Transform the data into a tuple containing all movies but the title and release year as two separate elements.
-3. Sort the movies using the *sorted* function and the *lambda* function as the key to sort by release year.
-4. Print the sorted tuple to the console for testing purposes.
-5. Save the tuple inside a new .txt file in the original format.
-6. Execute the program.
+### Usage
+
+Run the script with your input file named `movies_to_watch.txt`. The sorted output will be saved to `movies_to_watch_by_year.txt`.
+
+```python
+if __name__ == '__main__':
+    movies = read_movies_from_file("movies_to_watch.txt")
+    sorted_movies = sort_movies_by_year(movies)
+    print_movies(sorted_movies)
+    save_movies_to_file(sorted_movies, "movies_to_watch_by_year.txt")
+```
